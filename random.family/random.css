@@ -1,0 +1,134 @@
+html, body{    
+
+
+}
+
+body {
+    margin-left: 0px;
+    font-family: 'Merriweather', serif;
+    text-align: center; 
+    animation: pulse 6s ease infinite;
+    background: linear-gradient(270deg, #000066, #006fff, #49028b);
+    background-size: 400% 400%;
+}
+
+h1, h2 {   
+    color: blanchedalmond;
+    text-decoration: rgb(163, 159, 159);
+    text-shadow: 0 0 6px black, 0 0 5px #0000FF;
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    background-color: #333aab;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-size: 1.2em;
+    font-family: 'Merriweather';
+    font-weight: 800;
+
+}
+
+button:hover {
+    opacity: 1;
+    background-color: #4b0fff;
+    font-size: 1.3em;
+}
+button:focus, button:active, button.active, button:focus:active {
+    background-image: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+h2 {
+    font-family: 'Comic Neue', cursive;
+    letter-spacing: 0.1em;
+}
+
+.container{
+    width: 100%;   
+    justify-content: space-around;
+    display: flex;
+}
+
+#selection{
+    bottom: 30px;
+    position: absolute;
+    display: flex; 
+    justify-content: space-around;
+    width: 90%;
+    max-width: 580px;
+}
+
+.grayed-out {
+    opacity: 20%;
+    transition: 0.6s;
+}
+
+.char {
+    margin: 0 auto;
+    transition: 0.6s;
+}
+
+#selection img{
+    height: 100px;
+    width: 100px;
+}
+
+#ganador-div {
+    padding-top: 45px;
+}
+
+#ganador-name{}
+
+#ganadorPic {
+    height: 200px;
+    width: 200px;
+}
+
+
+#ganadorPic{ 
+    animation: 4s rotateRight infinite alternate; 
+}
+
+@keyframes rotateRight{
+    25%{ transform:rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@media only screen and (min-width: 800px) {
+    .container{
+        width: 100%;   
+        justify-content: space-around;
+        display: flex;
+    }
+    #selection{
+        left: 5%;
+        top: 25%;
+        position: absolute;
+        display: inline;
+        height: 400px; 
+        width: 400px;
+        overflow: auto;
+
+}
+    #ganador-div {
+        padding-top: 45px;
+        right: 25%;
+        position: absolute;
+    }   
+    .char {
+        width: 150px;
+        display: inline-block;
+    }
+}
