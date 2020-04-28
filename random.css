@@ -7,7 +7,9 @@ body {
     margin-left: 0px;
     font-family: 'Merriweather', serif;
     text-align: center; 
-    background: linear-gradient(to right, #000066 0%, #0099ff 100%);
+    animation: pulse 6s ease infinite;
+    background: linear-gradient(270deg, #000066, #006fff, #49028b);
+    background-size: 400% 400%;
 }
 
 h1, h2 {   
@@ -59,16 +61,18 @@ h2 {
     position: absolute;
     display: flex; 
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
     max-width: 580px;
 }
 
 .grayed-out {
     opacity: 20%;
+    transition: 0.6s;
 }
 
 .char {
     margin: 0 auto;
+    transition: 0.6s;
 }
 
 #selection img{
@@ -76,11 +80,8 @@ h2 {
     width: 100px;
 }
 
-.div-absolute{
-}
-
 #ganador-div {
-    padding-top: 65px;
+    padding-top: 45px;
 }
 
 #ganador-name{}
@@ -92,18 +93,42 @@ h2 {
 
 
 #ganadorPic{ 
-    transform-origin: 50% 50%;
-    animation: 3s rotateRight infinite alternate; 
+    animation: 4s rotateRight infinite alternate; 
 }
 
 @keyframes rotateRight{
-    10%{ transform:rotate(360deg); }
-}
-@keyframes rotateLeft{
-    50%{ transform:rotate(360deg); }
+    25%{ transform:rotate(360deg); }
 }
 
-@media only screen and (max-width: 800px) {
+@keyframes pulse {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
-    
+@media only screen and (min-width: 800px) {
+    .container{
+        width: 100%;   
+        justify-content: space-around;
+        display: flex;
+    }
+    #selection{
+        left: 5%;
+        top: 25%;
+        position: absolute;
+        display: inline;
+        height: 400px; 
+        width: 400px;
+        overflow: auto;
+
+}
+    #ganador-div {
+        padding-top: 45px;
+        right: 25%;
+        position: absolute;
+    }   
+    .char {
+        width: 150px;
+        display: inline-block;
+    }
 }
