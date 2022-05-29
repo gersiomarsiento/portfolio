@@ -3,20 +3,34 @@
  <head>
   <style>
     body {background: black;}
+    #container{width: 100%;display:flex;align-content: center;justify-content: space-evenly;}
+    #container>div{width: 30%;margin: 10px auto;text-align: center;border: 1px solid #10bb10;border-radius: 10px;}
+    img{height: 300px;width: 400px}
     a   {color: white;}
     p    {color: gray;}
+    @media screen and (max-width: 800px) {
+        #container{flex-direction: column;}
+        #container>div{width: 90%;auto}
+    }
   </style>
 <body>
-    <h1><a href="random/random.html">RANDOM</a> </h1>
-    <img src="previews/randomizer.jpg" alt="randomizer preview">
-    <p>A simple app that lets the user select a random choice from up to four participants.</p>
-    <h1><a href="ColorGuesser/color-guessing-game.html">Color Guesser</a> </h1>
-    <img src="previews/colorguesser.jpg" alt="color guesser preview">
-    <p>A game where a random RGB code is generated and the user must choose the corresponding color from the given choices, which are also randomly generated.</p>
-    <h1><a href="https://cinepica.github.io/">Cinépica Films Project</a> </h1>
-    <img src="previews/cinepica.jpg" alt="cinepica preview">
-    <p>Films project database with many recommended movies, which can be filtered by genre. Work in progress!</p>
+    <div id="container">
+        <div>
+            <h1><a href="random/random.html">RANDOM</a> </h1>
+            <img src="previews/randomizer.jpg" alt="randomizer preview">
+            <p>A simple app that lets the user select a random choice from up to four participants.</p>
+        </div>
+        <div>
+            <h1><a href="ColorGuesser/color-guessing-game.html">Color Guesser</a> </h1>
+            <img src="previews/colorguesser.jpg" alt="color guesser preview">
+            <p>A game where a random RGB code is generated and the user must choose the corresponding color from the given choices, which are also randomly generated.</p>
+        </div>
+        <div>
+            <h1><a href="https://cinepica.github.io/">Cinépica Films Project</a> </h1>
+            <img src="previews/cinepica.jpg" alt="cinepica preview">
+            <p>Films project database with many recommended movies, which can be filtered by genre. Work in progress!</p>
+        </div>
+    </div>
 
 </body>
 </html>
-
