@@ -9,7 +9,14 @@ html, body {
 }
 
 #container>div{
-    width: 30%;margin: 10px auto;text-align: center;border: 2px solid #10bb10;border-radius: 10px;
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    color:;
+    border: 2px solid #10bb10;
+    border-radius: 10px;
+    background: rgba(55, 155, 55, .6);
+}
 }
 
 img{
@@ -18,10 +25,11 @@ img{
 
 a   {
     color: white;
+    text-decoration: none;
 }
 
 p    {
-    color: gray;
+    color: #cfe9d1;
 }
 
 @media screen and (max-width: 800px) {
