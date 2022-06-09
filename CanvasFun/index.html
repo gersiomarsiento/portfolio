@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+  <div id="selectors">
+    <label for="stroke">STROKE</label>
+    <input type="range" id="stroke" name="stroke" class="stroke" min="0" max="360" value="1"></button>
+    <label for="size">SIZE</label>
+    <input type="range" id="size" name="size" min="1" max="40" value="5"></button>
+    <label for="background">BACKGROUND</label>
+    <input type="range" id="background" name="background" class="background" min="1" max="360" value="5"></button>
+  </div>
+
+<canvas id="draw" width="800" height="800">
+
+
+</canvas>
+
+
+<script>
+  const canvas = document.querySelector("#draw");
+  let selectedStroke = document.querySelector("#stroke");
+  let selectedSize = document.querySelector("#size");
+  let selectedBackground = document.querySelector("#background");
+  const ctx = canvas.getContext('2d');
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  ctx.strokeStyle = "#BADA55";
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  ctx.lineWidth = 10;
+  
+
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+  let hue = 0;
+
+  function draw(e){
+    if(!isDrawing) return; // doesnt draw when not clicking
+    ctx.strokeStyle = `hsl(${selectedStroke.value},100%,50%`;
+    ctx.lineWidth = `${selectedSize.value}`;
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+/*     hue++;
+    if(hue>360){
+      hue= 0;
+    } THIS IS FOR THE RAINBOW DYNAMIC COLOR*/
+  }
+
+  canvas.addEventListener("mousedown", (e)=> {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", ()=> isDrawing = false);
+  canvas.addEventListener("mouseout", ()=> isDrawing = false);
+
+  selectedBackground.addEventListener("change",()=>document.body.style.background = `hsl(${selectedBackground.value},100%,50%`)
+
+
+</script>
+
+<style>
+  html, body {
+    margin: 0;
+  }
+
+  #selectors {
+    display: flex; 
+    justify-content: center;
+    background: #303030;
+    color: rgba(220,250,200,100%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100%;
+    align-content: center;
+  }
+
+  label{
+  }
+
+  .stroke, .background{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    border: 1px solid black;
+    border-radius: .2em;
+    background: linear-gradient(to right, rgb(250,2,2),rgb(250,2,2), rgb(250,100,2), rgb(250,200,2), rgb(200,250,2), rgb(100,250,2), 
+    rgb(2,250,2), rgb(2,250,100), rgb(2,250,200), rgb(2,200,250), rgb(2,100,250), rgb(2,2,250), rgb(100,2,250), 
+    rgb(200,2,250),rgb(250,2,200),rgb(250,2,100),rgb(250,2,2),rgb(250,2,2));
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    cursor: pointer;
+  }
+
+  input:hover{
+  opacity: 1;
+  }
+
+</style>
+
+</body>
+</html>
