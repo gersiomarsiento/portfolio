@@ -62,6 +62,11 @@
   canvas.addEventListener("mouseup", ()=> isDrawing = false);
   canvas.addEventListener("mouseout", ()=> isDrawing = false);
   
+  
+  var rect = e.target.getBoundingClientRect();
+var x = e.targetTouches[0].pageX - rect.left;
+var y = e.targetTouches[0].pageY - rect.top;
+  
   canvas.addEventListener("touchstart", (e)=> {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
