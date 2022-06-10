@@ -35,8 +35,8 @@
   
 
   let isDrawing = false;
-  let lastX = 0;
-  let lastY = 0;
+  var mousePos = { x:0, y:0 };
+  var lastPos = mousePos;
   let hue = 0;
 
   function draw(e){
@@ -44,10 +44,10 @@
     ctx.strokeStyle = `hsl(${selectedStroke.value},100%,50%`;
     ctx.lineWidth = `${selectedSize.value}`;
     ctx.beginPath();
-    ctx.moveTo(lastX, lastY);
+    ctx.moveTo(lastPos.x, lastPos.y);
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    [lastPos.x, lastPos.y] = [e.offsetX, e.offsetY];
 /*     hue++;
     if(hue>360){
       hue= 0;
@@ -56,17 +56,13 @@
 
   canvas.addEventListener("mousedown", (e)=> {
     isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    lastPos = getMousePos(canvas, e);
     });
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", ()=> isDrawing = false);
   canvas.addEventListener("mouseout", ()=> isDrawing = false);
   
-  
-  var rect = e.target.getBoundingClientRect();
-var x = e.targetTouches[0].pageX - rect.left;
-var y = e.targetTouches[0].pageY - rect.top;
-  
+  /*
   canvas.addEventListener("touchstart", (e)=> {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
@@ -74,6 +70,38 @@ var y = e.targetTouches[0].pageY - rect.top;
   canvas.addEventListener("touchmove", draw);
   canvas.addEventListener("touchend", ()=> isDrawing = false);
   canvas.addEventListener("touchcancel", ()=> isDrawing = false);
+  */
+  
+  canvas.addEventListener("touchstart", function (e) {
+        mousePos = getTouchPos(canvas, e);
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousedown", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+canvas.addEventListener("touchend", function (e) {
+  var mouseEvent = new MouseEvent("mouseup", {});
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+canvas.addEventListener("touchmove", function (e) {
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousemove", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+
+// Get the position of a touch relative to the canvas
+function getTouchPos(canvasDom, touchEvent) {
+  var rect = canvasDom.getBoundingClientRect();
+  return {
+    x: touchEvent.touches[0].clientX - rect.left,
+    y: touchEvent.touches[0].clientY - rect.top
+  };
+}
 
   selectedBackground.addEventListener("change",()=>document.body.style.background = `hsl(${selectedBackground.value},100%,50%`)
 
