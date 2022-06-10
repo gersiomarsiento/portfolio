@@ -46,9 +46,9 @@
     ctx.lineWidth = `${selectedSize.value}`;
     ctx.beginPath();
     ctx.moveTo(lastPos.x, lastPos.y);
-    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.lineTo(mousePos.x, mousePos.y);
     ctx.stroke();
-    [lastPos.x, lastPos.y] = [e.offsetX, e.offsetY];
+    [lastPos.x, lastPos.y] = [mousePos.x, mousePos.y];
 /*     hue++;
     if(hue>360){
       hue= 0;
