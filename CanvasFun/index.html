@@ -75,17 +75,7 @@ function getMousePos(canvasDom, mouseEvent) {
     y: mouseEvent.clientY - rect.top
   };
 }
-  
-  
-  /*
-  canvas.addEventListener("touchstart", (e)=> {
-    isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-    });
-  canvas.addEventListener("touchmove", draw);
-  canvas.addEventListener("touchend", ()=> isDrawing = false);
-  canvas.addEventListener("touchcancel", ()=> isDrawing = false);
-  */
+ 
   
   canvas.addEventListener("touchstart", function (e) {
         mousePos = getTouchPos(canvas, e);
@@ -120,6 +110,22 @@ function getTouchPos(canvasDom, touchEvent) {
 
   selectedBackground.addEventListener("change",()=>document.body.style.background = `hsl(${selectedBackground.value},100%,50%`)
 
+  // Prevent scrolling when touching the canvas
+document.body.addEventListener("touchstart", function (e) {
+  if (e.target == canvas) {
+    e.preventDefault();
+  }
+}, false);
+document.body.addEventListener("touchend", function (e) {
+  if (e.target == canvas) {
+    e.preventDefault();
+  }
+}, false);
+document.body.addEventListener("touchmove", function (e) {
+  if (e.target == canvas) {
+    e.preventDefault();
+  }
+}, false);
 
 </script>
 
