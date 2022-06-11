@@ -75,7 +75,15 @@ function removeTransition (e){
 }
 
 const keys = document.querySelectorAll(".key");
-keys.forEach(key => key.addEventListener("transitionend", removeTransition))
+keys.forEach((key) => {
+  key.addEventListener("transitionend", removeTransition);
+  
+  key.addEventListener('click', () => {
+      let keyPress = new KeyboardEvent("keydown", {keyCode:key.dataset.key})
+      window.dispatchEvent(keyPress);
+  })
+
+});
 window.addEventListener('keydown', playSound);
 
 </script>
