@@ -23,7 +23,7 @@
         <div id="lead-content">
             <h1>SERGIO EZEQUIEL SARMIENTO</h1>
             <h3>Trainee Developer</h3>
-            <button id="get-cv" download="/cv.pdf">Download CV</button>
+            <a id="get-cv" href="cv.pdf" download="cv.pdf">Download CV</a>
         </div>
         <div id="lead-overlay"></div>
     </div>
@@ -147,8 +147,8 @@
     </div> -->
     <div id="contact">
         <h2>Contact Me!</h2>
-        <form action="send_mail.php" method="post">
-            <label for="name">Name</label>
+        <form action="mailto:sergioezequielsarmiento@gmail.com?body=Name:%0D%0ACompany:%0D%0AMessage:" method="post">
+            <!-- <label for="name">Name</label>
             <input type="text" name="name">
             <label for="company">Company</label>
             <input type="text" name="company">
@@ -156,8 +156,8 @@
             <input type="email" name="email">
             <label for="message">Message</label>
             <textarea rows="6" name="message"></textarea>
-            <br>
-            <input type="submit" name="submit" value="Send" id="submit-form">
+            <br> -->
+            <input type="submit" name="submit" value="Sure!" id="submit-form">
         </form>
     </div>
 </body>
