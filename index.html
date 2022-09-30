@@ -1,43 +1,164 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;0,800;1,200;1,400&display=swap" rel="stylesheet">
  </head>
 <body>
-    <div id="container">
-        <div>
-            <h1><a href="random/random.html">RANDOM</a> </h1>
-            <a href="random/random.html"><img src="previews/randomizer.jpg" alt="randomizer preview"></a>
-            <p>A simple app that lets the user select a random choice from up to four participants.</p>
+    <header>
+        <ul class="navbar">
+            <a class="nav-link" href="#about">About</a>
+            <!-- <a class="nav-link" href="">Experience</a> -->
+            <!-- <a class="nav-link" href="">Education</a> -->
+            <a class="nav-link" href="#projects">Projects</a>
+            <!-- <a class="nav-link" href="#my-story">My Story</a> -->
+            <a class="nav-link" href="#contact">Contact</a>
+        </ul>
+    </header>
+    <div id="lead">
+        <div id="lead-content">
+            <h1>SERGIO EZEQUIEL SARMIENTO</h1>
+            <h3>Trainee Developer</h3>
+            <button id="get-cv" download="/cv.pdf">Download CV</button>
         </div>
-        <div>
-            <h1><a href="ColorGuesser/color-guessing-game.html">Color Guesser</a> </h1>
-            <a href="ColorGuesser/color-guessing-game.html"><img src="previews/colorguesser.jpg" alt="color guesser preview"></a>
-            <p>A game where a random RGB code is generated and the user must choose the corresponding color from the given choices, which are also randomly generated.</p>
+        <div id="lead-overlay"></div>
+    </div>
+    <div id="about">
+        <div class="main-img">
+            <img src="https://res.cloudinary.com/gersiomarsiento/image/upload/v1662510177/Sin_t%C3%ADtulo-modified_cmbpav.png" alt="">
         </div>
-        <div>
-            <h1><a href="https://cinepica.herokuapp.com/">Cinépica Films</a> </h1>
-            <a href="https://cinepica.herokuapp.com/"><img src="previews/cinepica.jpg" alt="cinepica preview"></a>
-            <p>Films project database with many recommended movies, which can be filtered by genre. Work in progress!</p>
-        </div>
-        <div>
-            <h1><a href="CanvasFun/index.html">Drawing Canvas</a> </h1>
-            <a href="CanvasFun/index.html"><img src="previews/draw.jpg" alt="CanvasFun preview"></a>
-            <p>A Canvas where things can be drawn (from "JavaScript30" course)</p>
-        </div>
-        <div>
-            <h1><a href="JS%20Drum-Kit/index.html">Drum Kit</a> </h1>
-            <a href="JS%20Drum-Kit/index.html"><img src="previews/drums.jpg" alt="Drum Kit preview"></a>
-            <p>A drum kit that can be played using the keyboard (from "JavaScript30" course).</p>
-        </div>
-        <div>
-            <h1><a href="JS-Clock/css-js-clock.html">Clock</a> </h1>
-            <a href="JS-Clock/css-js-clock.html"><img src="previews/clock.jpg" alt="clock preview"></a>
-            <p>A simple "analog" clock (from "JavaScript30" course).</p>
+        <div id="about-text">
+            <p>Freelancer. Learner. Web Developer. Translator. Sports lover. Can communicate in Spanish, English, French, Italian, Portuguese and German. Non-practicing sports journalist. ~4 years as videogame QA tester. 4+ years working at hostels and campings, ranging from house-keeper to receptionist and reception manager. Traveler. Worked in Argentina, Uruguay, Spain, Germany and Sweden.</p>
         </div>
     </div>
 
+    <div id="projects">
+        <h2>Projects</h2>
+        <div id="container">
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="https://cinepica.herokuapp.com/">Cinépica Films</a> </h2>
+                </div>
+                <a href="https://cinepica.herokuapp.com/"><img class="preview-img" src="previews/cinepica.jpg" alt="cinepica preview"></a>
+                <div class="link-description">
+                    <p>Films project database with many recommended movies, which can be filtered by genre. Work in progress!</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="https://caballerosdelaorden.org.ar/">Caballeros de la Orden Franciscana</a> </h2>
+                </div>
+                <a href="https://caballerosdelaorden.org.ar/"><img class="preview-img" src="previews/caballeros.jpg" alt="caballeros preview"></a>
+                <div class="link-description">
+                    <p>Site designed and created on WordPress for an NGO.</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="https://github.com/gersiomarsiento/spacecrafts">Spacecrafts</a> </h2>
+                </div>
+                <a href="https://github.com/gersiomarsiento/spacecrafts"><img class="preview-img" src="previews/spacecrafts.jpg" alt="caballeros preview"></a>
+                <div class="link-description">
+                    <p>Spacecrafts inventory app designed as part of a challenge for SofkaU. Developed using JS, Node, Mongo and Express.</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="random/random.html">RANDOM</a> </h2>
+                </div>
+                <a href="random/random.html"><img class="preview-img" src="previews/randomizer.jpg" alt="randomizer preview"></a>
+                <div class="link-description">
+                    <p>A simple app that lets the user select a random choice from up to four participants.</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="ColorGuesser/color-guessing-game.html">Color Guesser</a> </h2>
+                </div>
+                <a href="ColorGuesser/color-guessing-game.html"><img class="preview-img" src="previews/colorguesser.jpg" alt="color guesser preview"></a>
+                <div class="link-description">
+                    <p>A game where a random RGB code is generated and the user must choose the corresponding color from the given choices, which are also randomly generated.</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="CanvasFun/index.html">Drawing Canvas</a> </h2>
+                </div>
+                <a href="CanvasFun/index.html"><img class="preview-img" src="previews/draw.jpg" alt="CanvasFun preview"></a>
+                <div class="link-description">
+                    <p>A Canvas where things can be drawn (from "JavaScript30" course)</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="JS%20Drum-Kit/index.html">Drum Kit</a> </h2>
+                </div>
+                <a href="JS%20Drum-Kit/index.html"><img class="preview-img" src="previews/drums.jpg" alt="Drum Kit preview"></a>
+                <div class="link-description">
+                    <p>A drum kit that can be played using the keyboard (from "JavaScript30" course).</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <div class="link-title">
+                    <h2><a href="JS-Clock/css-js-clock.html">Clock</a> </h2>
+                </div>
+                <a href="JS-Clock/css-js-clock.html"><img class="preview-img" src="previews/clock.jpg" alt="clock preview"></a>
+                <div class="link-description">
+                    <p>A simple "analog" clock (from "JavaScript30" course).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="my-story">
+        <p>Born in Argentina, got a joystick in my hands at the age of 4. Ever since, technology was a big part of my life.
+        </p>
+        <p>Videogames were the entrance to this marvelous universe, but there was another key element coming in: languages. In retrospective, I can see it all as parts of the same big puzzle: as a Spanish speaker in a country were games did not arrive translated, I got through countless videogames in English and Japanese without having a clue of what I was doing.
+        </p>
+        <p>This did not only make me keen on these two topics but, more importantly, it slowly turned me into a self-sufficient self-learner. I did not have much information other than the videogames magazines that I loved back then in a world without Internet.</p>
+        <p>This meant that at the age of 13 I was already able to translate English to Spanish, even if not completely accurately. I even 'decoded' what the Japanese katakana symbols meant by playing Winning Eleven 4, the japanese version of Pro Evolution Soccer. I rememeber being tired of having it in Japanese, and since I had a lot of free time I went through each and every football player name, decoded it by hearing the pronunciation and reading the symbols, and wrote down their Latin version.</p> 
+        <p>Of course, in comes another one on my passions: sports. Football was always a thing for me, but it spread out and got to the point of studying Sports Journalism after I left high school.</p>
+        <p>Around that time I also got into the working world: I got a job at a call center where I would sell cell phones to the United States. In English, of course, thus combining the languages with my first approach towards a tech environment in a job context.</p>
+        <p>Disappointed with how the journalistic part of sports moves, after having finished the career I grew more into the technology universe: this time, I got a job as a QA tester for French videogame company Gameloft. During my 4 years there, I even got the chance to expand my set of languages by learning some French. It was a dream come true!</p>
+        <p>But all dreams have to end at some point. The Buenos Aires studio of the franchise slowly faded and ended up closing its doors. I was left without a job and, without a clue of what to do, I stumbled upon yet another one of my passions: travelling!</p>
+        <p>Through my boss at Gameloft I got in touch with a woman who turned out to be managing a hostel at a beautiful, sunny beach in a foreign country. Next stop: Uruguay!</p>
+        <p>I took a risky step, leaving all I had behind in order to try my luck for the entire summer season working amongst tourists. It was my first time leaving the country, leaving my parents' home, going for an adventure to a place of which I knew nothing about, with no certainties other than a Skype call with this woman. I never imagined my life would be turned upside down by that step. It would never go back to being the same again.</p>
+        <p>Punta del Diablo is a small beach town of around 1000-2000 steady inhabitants that during the summer months can go up to 10.000. It's a very touristic spot with wonderful beaches, only 50 kms away from the Brazilian border.</p>
+        <p>There, I spent a season working at this hostel as a housekeeper where I met people from all around the world. All the different countries, languages, cultures, living in small and crowded rooms along with other 20-30 staff members with whom I shared each and every minute of my existence. It totally blew my mind. For good!</p>
+        <p>This made me realize that maybe, just maybe, my next moves might have something to do with exploration. After the season was over, me and a friend of mine packed our backpacks and went for a wonderful 5 months adventure throughout South America. Argentina, Bolivia, Perú, Ecuador, Colombia and Venezuela, they all had their say in my life, and I continue to carry their teachings within me. With their ups and downs, with the lucky strikes and the moments of doom, with the people I met and the places I've seen, with the helping hands that saved my life and the times I might have helped a soul in need.</p>
+        <p>After this fantastic travel, I went back for another season at the hostel. And another. And another. By the fourth season there, I was already a reception manager. But where is the technology in all this?</p>
+        <p>Back in that period, I was completely overwhelmed by so many things from the physical world that I barely had any time to spend with screens. From 2013 to 2019, I didn't even have a cell phone! The laptop I had was stolen during my first season at the hostel, so I decided to accept my fate and 'travel light'.</p>
+        <p>In 2016, at my third season in the hostel, I met she who was meant to be my partner in crime: Verónica. She and I soon got together, and with a like-minded soul it was only a matter of time to begin my travels again.</p>
+        <p>With her I've been sharing my entire like ever since. Not only we've lived together, but we've traveled, worked, discovered, suffered, laughed and cried together. You, attentious reader, will notice that from this point on, I will be mostly speaking in plural.</p>
+        <p>We decided to go European: in 2017 we went on a 4-months trip to work during the high season at a beatiful camping in mountainy Catalunya. In that same trip, we also also did some volunteering in Wales, Portugal and Morocco. A beautiful way to get first-hand experience of different cultures!</p>
+        <p>Then in 2018, we wanted to have an even deeper experience: we took a 1 year visa for Germany, and ended up working at an Amazon warehouse in Köln. We also appointed ourselves for German classes at the Leverkusen Volkshochschule, reaching a B1 level before our time was over.</p>
+        <p>After Germany, we took another 1-year visa for another country of which we didn't have a clue of the language they spoke: Sweden.</p>
+        <p>Of course, before reaching Sweden, we had to go through some more volunteering in the countryside of places where we didn't speak the language: Greece and Italy.</p>
+        <p>You, dear reader, might ask yourself once again: so when does technology make its striking comeback? The answer is: RIGHT AT THIS POINT!</p>
+        <p>It was obvious that my distance towards technology could not last long. The continuous travels that took place forced me back to purchasing a cell phone (you need one for, let's say, take a bus in Sweden, for instance).</p>
+        <p>When we arrived in Sweden, we started looking for jobs. It was tough, as we did not speak a word of Swedish. Then a friend mine from Gameloft came to me with one of the best recommendations I would ever receive. He said: 'Why don't you do an online Web Developer course? This one is the best you will find', and pointed out towards 'The Web Developer Bootcamp' by Colt Steele in Udemy. This was the stepping stone I needed.</p>
+        <p>However, that was only the beginning of a long, programmatic path. I still had to work, and while I was trying to gather programming knowledge, I had to keep on living and working. Hence, with Verónica we moved to a wonderful camping in rural Sweden, where we found a summer job at this magical place right by Fölingen lake in Kisa. </p>
+        <p>We spent two summers there. In between those, we got another short spell volunteering at a camping in Croatia and spent several months in Italy, where we also took Italian classes (of course).</p>
+        <p>Pandemic broke in, and by the end of 2020 we decided to stop trying to cross overly-controlled borders and go back to Argentina. There, while we kept learning programming languages (Verónica also started learning at that point), I took a temporary job as a remote Player Support agent for korean MMORPG Black Desert Online. We also landed some freelance online jobs as CMS for platforms such as Wix, Shopify and WordPress, and freelance EN-ES subtitle translations for the most well-known streaming platforms.</p>
+        <p>With our mind set on landing full-time programming jobs, we moved back to where our adventure began: Punta del Diablo, Uruguay. This where I am as I write this words. Nowadays, my life is surrounded by waves, wind, sun, dogs, cats and friends, and my days are filled with sports and programming languages, amongst many other beautiful things.</p>
+    </div> -->
+    <div id="contact">
+        <h2>Contact Me!</h2>
+        <form action="send_mail.php" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for="company">Company</label>
+            <input type="text" name="company">
+            <label for="email">Contact E-Mail</label>
+            <input type="email" name="email">
+            <label for="message">Message</label>
+            <textarea rows="6" name="message"></textarea>
+            <br>
+            <input type="submit" name="submit" value="Send" id="submit-form">
+        </form>
+    </div>
 </body>
 </html>
