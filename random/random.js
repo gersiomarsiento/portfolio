@@ -23,6 +23,7 @@ function randomize () {
     }}
     var winner = participantsArray[Math.floor((Math.random() * participantsArray.length))]
     ganadorDisplay.textContent = participantsArray[participantsArray.indexOf(winner)].name;
+    ganadorPicDisplay.style.display = "block";
     ganadorPicDisplay.src = participantsArray[participantsArray.indexOf(winner)].photo; 
     participantsArray = [];}
 

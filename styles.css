@@ -263,7 +263,12 @@ input, textarea{
     border-radius: .2rem;
     margin: .5rem;
     font-size: 1rem;
+    box-shadow: 0rem 0rem .8rem var(--color1);
+}
 
+input:focus, textarea:focus{
+    transform: scale(1.1);
+    transition: .2s;
 }
 
 #social-media-container {
