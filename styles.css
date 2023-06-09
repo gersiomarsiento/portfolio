@@ -23,7 +23,7 @@ p {
     
     
 a {
-    color: white;
+    color: var(--color1);
     text-decoration: none;
     display: inline;
 }
@@ -233,7 +233,7 @@ h2 {
     justify-content: space-evenly;
 }
 
-.pill-stacks img {
+.pill-icon {
     height: 3rem;
     width: 3rem;
     background-color: var(--color4);
@@ -258,6 +258,24 @@ form {
 
 input, textarea{
     width: 20rem;
+    background-color: var(--color5);
+    color: var(--color1);
+    border-radius: .2rem;
+    margin: .5rem;
+    font-size: 1rem;
+
+}
+
+#social-media-container {
+    width: 10rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+#social-media-container a:hover{
+    transform: scale(1.5, 1.5);
+    transition: .2s;
 }
 
 @media screen and (max-width: 800px) {
