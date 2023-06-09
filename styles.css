@@ -22,11 +22,12 @@ p {
 }
     
     
-a{
+a {
     color: white;
     text-decoration: none;
     display: inline;
 }
+
 header {
     position: fixed;
     color: white;
@@ -40,11 +41,13 @@ header {
     border-radius: 1rem;
     transition: .1s;
 }
+
 header:hover {
     opacity: 1;
     transition: .2s;
     transform: translateX(-50%) translateY(0%);
 }
+
 header::after{
 	content: "╲╱";
     text-align: -webkit-center;
@@ -83,7 +86,8 @@ ul{
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
 }
-#lead{
+
+#lead {
     position: relative;
     height: 100vh;
     min-height: 500px;
@@ -195,7 +199,7 @@ h2 {
     */
     text-align: -moz-center;
     text-align: -webkit-center;
-    background: rgb(31 56 58 / 70%);
+    background: rgb(31 56 58 / 90%);
     border-radius: 10px;
     border: 2px solid var(--color2);
     display: grid;
@@ -203,7 +207,6 @@ h2 {
     grid-column-gap: 10px;
     padding: 1rem;
     margin: 1rem;
-
 }
 
 .preview-img{
@@ -211,21 +214,36 @@ h2 {
     height: 220px;
 }
 
-.link-title{
-    height: 6rem;
-}
+/* .link-title{
+    height: 8rem;
+} */
 
 .link-title > h2 {
     margin-top: 0;
 }
 
 .link-description {
-    height: 6rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+}
+
+.pill-stacks {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pill-stacks img {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--color4);
+    border-radius: 30%;
+    padding: .3rem;
 }
 
 #contact {
     background-color: var(--color3);
-    padding: 40px;
+    padding: 10rem 0 12rem 0;
     text-align: -moz-center;
     text-align: -webkit-center;
 }
