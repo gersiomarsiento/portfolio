@@ -218,6 +218,16 @@ h2 {
     padding: 1rem;
     margin: 2rem 1rem;
     box-shadow: .20rem .3rem .6rem .1rem #fbf7ff70;
+    /* ***** SPECIFIC FOR ANIMATION ***** */
+    position: relative;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.link-container.entered{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .link-container:hover {
