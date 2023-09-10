@@ -270,6 +270,17 @@ h2 {
     padding: .3rem;
 }
 
+.code-icon {
+    font-size: 2rem;
+    color: var(--color4);
+    margin: 16px 0;
+}
+.code-icon:hover {
+    transform: scale(1.3);
+    transition: .2s;
+}
+
+
 #contact {
     background-color: var(--color5);
     padding: 2rem 0 2rem 0;
